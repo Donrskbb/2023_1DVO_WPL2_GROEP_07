@@ -6,7 +6,7 @@ CROOZE
 
 # Teamleden
 
-- Niels Volders [(NielsVoldersPXL)](https://github.com/NielsVoldersPXL)
+- Niels Volders [(NielsVoldersPXL)](https://github.com/NielsV123)
 - Tommy Vanderheyden [(TommyVanderheydenPXL)](https://github.com/TommyVanderheydenPXL)
 - Miguel Celen [(MiguelCelenPXL)](https://github.com/MiguelCelenPXL)
 - Diedre Schwillens [(DiedreSchwillens)](https://github.com/DiedreSchwillens)
