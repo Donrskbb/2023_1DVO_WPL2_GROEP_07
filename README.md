@@ -1,1 +1,17 @@
 # 2023_1DVO_WPL2_GROEP_07
+
+# Case
+
+CROOZE
+
+# Teamleden
+
+- Niels Volders (NielsVoldersPXL) [(NielsVoldersPXL)](https://github.com/NielsVoldersPXL)
+- Tommy Vanderheyden (TommyVanderheydenPXL) [(TommyVanderheydenPXL)](https://github.com/TommyVanderheydenPXL)
+- Miguel Celen (MiguelCelenPXL) [(MiguelCelenPXL)](https://github.com/MiguelCelenPXL)
+- Diedre Schwillens (DiedreSchwillens) [(DiedreSchwillens)](https://github.com/DiedreSchwillens)
+- Tim Donners [(PXL - Tim Donners)](https://github.com/Donrskbb)
+
+# Bronnen
+
+- ...
