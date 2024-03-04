@@ -35,6 +35,26 @@ body, html {
    opacity: 0;
    animation: textFade 2s infinite;
  }
+
+ .header-logo {
+  width: 200px;
+  margin: 5px;
+ }
+
+ .btn-icon {
+  padding-right: 1vh;
+  color: #fff;
+ }
+
+ .btn-style {
+  color: #fff;
+  background-color: blue;
+  border-radius: 10px;
+  border: none;
+
+  margin: 2px;
+  font-weight: 800;
+ }
  
  @keyframes wave {
    0% {
