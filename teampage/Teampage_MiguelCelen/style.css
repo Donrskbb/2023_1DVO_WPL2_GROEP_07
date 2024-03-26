@@ -1,0 +1,473 @@
+.jumbotron{
+    margin-top: 20px;
+}
+.container_1{
+    margin: 50px 20px 20px;
+}
+.title{
+    margin: 20px 0 0;
+    padding: 0 10px 0;
+}
+.container_2{
+    margin: 50px 20px 20px;
+}
+.container_3{
+    margin: 50px 20px 20px;
+}
+.container_4{
+    margin: 50px 20px 20px;
+}
+.row{
+    justify-content: center;
+}
+#c1,#c3,#c4,#c5{
+    background-color: #332f2f;
+    margin: 10px;
+    height: 300px;
+    width: 300px;
+    border-radius: 5px;
+}
+#c6,#c7,#c8{
+    background-color: #332f2f;
+    margin: 10px;
+    height: 300px;
+    width: 300px;
+    border-radius: 5px;
+}
+#c1{
+    background-image: url("assets/Blender.jpeg");
+    background-size: cover;
+}
+#c1 h6{
+    Position: relative;
+    Top: 273px;
+    Left: 80px;
+    Opacity: 0;
+    Transition: opacity 1s;
+}
+#c1:hover h6{
+    Opacity: 1;
+}
+#c1_1{
+    background-image: url("assets/Blender_140px.png");
+    background-size: cover;
+    margin: 10px;
+    width: 300px;
+    height: 140px;
+}
+#c1_1_1{
+    background-image: url("assets/Vue_140px.png");
+    background-size: cover;
+    background-color: #332f2f;
+    margin-left: -12px;
+    padding-left: 13px;
+    margin-top: 156px;
+    width: 300px;
+    height: 140px;
+}
+#c1_2{
+    background-image: url("assets/data.png");
+    background-size: cover;
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+}
+#c1_2 h6{
+    Position: relative;
+    Top: 275px;
+    Left: 75px;
+    Opacity: 0;
+    Transition: opacity 1s;
+}
+#c1_2:hover h6{
+    Opacity: 1;
+}
+#c1_3{
+    background-image: url("assets/ProjectManagement.png");
+    background-size: cover;
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+}
+#c1_3 h6{
+    Position: relative;
+    Top: 270px;
+    Left: 65px;
+    Opacity: 0;
+    Transition: opacity 1s;
+}
+#c1_3:hover h6{
+    Opacity: 1;
+}
+#c1_4{
+    margin: 10px;
+    width: 300px;
+    height: 140px;
+    background-image: url("assets/Jira_140px.png");
+    background-size: cover;
+}
+#c1_4_1{
+    background-color: #332f2f;
+    margin-left: -12px;
+    padding-left: 13px;
+    margin-top: 156px;
+    width: 300px;
+    height: 140px;
+    background-image: url("assets/Figma_140px.png");
+    background-size: cover;
+}
+#c2{
+    background-color: #332f2f;
+    margin: 10px;
+    height: 150px;
+    width: 300px;
+    border-radius: 5px;
+}
+#c3{
+    background-image: url("assets/UX_Design.png");
+    background-size: cover;
+}
+#c3 h6{
+    Position: relative;
+    Top: 273px;
+    Left: 100px;
+    Opacity: 0;
+    Transition: opacity 1s;
+}
+#c3:hover h6{
+    Opacity: 1;
+}
+#c4{
+    margin: 20px;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border: 2px solid #332f2f;
+    background-image: url("assets/Image.jpeg");
+    background-size: cover;
+}
+#c5{
+    background-color: #FFF;
+    margin: 10px;
+    height: 300px;
+    width: 623px;
+    border-radius: 5px;
+}
+#c6{
+    background-image: url("assets/Oefening_1.png");
+    background-size: cover;
+}
+#c7{
+    width: 300px;
+    background-image: url("assets/Oefening 2.png");;
+    background-size: cover;
+}
+#c8{
+    background-image: url("assets/Oefening_3.png");
+    background-size: cover;
+}
+#c10{
+    height: 300px;
+    width: 950px;
+    margin-top: 50px;
+    margin-left: 100px;
+}
+.col-6, .col-sm-4{
+    background-color: #332f2f;
+    border-radius: 5px;
+}
+#button{
+    border-radius: 20px;
+    background-color: #332f2f;
+    color: #FFFFFF;
+    width: 150px;
+    text-decoration: none;
+    border: 1px solid #332f2f;
+}
+#button a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#button a:hover{
+    text-decoration: underline #FFFFFF;
+}
+.inhoud{
+    color: #FFFFFF;
+}
+.inhoud_1{
+    color: #FFFFFF;
+}
+.text{
+    color: #000000;
+}
+h4{
+    text-align: center;
+    text-decoration: underline;
+}
+#black{
+    color: black;
+}
+#circle{
+    background-color: #332f2f;
+    margin: 10px;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+}
+#logo{
+    width: 60px;
+    margin: 10px;
+}
+
+/*Bouncing Ball Animation*/
+.bouncing-ball {
+    margin-top: 5rem;
+}
+.bouncing-ball svg {
+    overflow: visible;
+}
+.bouncing-ball svg circle {
+    fill: #332f2f;
+    position: absolute;
+    z-index: 2;
+    offset-path: path("m571.94,266.86c-6.61-30.28-33.67-51.98-64.51-51.86-30.52.12-57.21,21.57-63.93,51.49,3.95-63.68-48.28-116.21-107.65-114.3-56.61,1.82-104.16,52.64-100.85,113.3.56-10.65,5.52-146.81-99.83-221.05C81.79,6.84,25.51,3.03,0,3");
+    animation-name: ball;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.12, 0.1, 0.39, 0.12);
+}
+.bouncing-ball svg #pad {
+    transform: scale(0.5);
+}
+.bouncing-ball svg #pad .cls-1 {
+    stroke-dasharray: 0 0 49.21 49.21;
+}
+.bouncing-ball svg #pad .cls-1, .bouncing-ball svg #pad .cls-2, .bouncing-ball svg #pad .cls-3, .bouncing-ball svg #pad .cls-4 {
+    fill: none;
+    stroke: #332f2f;
+    stroke-miterlimit: 10;
+    stroke-width: 6px;
+}
+.bouncing-ball svg #pad .cls-2 {
+    stroke-dasharray: 0 0 49.48 49.48;
+}
+.bouncing-ball svg #pad .cls-3 {
+    stroke-dasharray: 0 0 43.73 43.73;
+}
+.bouncing-ball svg img {
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes ball {
+    0% {
+        offset-distance: 100%;
+    }
+    30% {
+        offset-distance: 45%;
+    }
+    60% {
+        offset-distance: 5%;
+    }
+    100% {
+        offset-distance: 0;
+    }
+}
+/* end Bouncing Ball Animation*/
+
+/*Media Query full screen*/
+@media screen and (max-width: 1920px){
+    #c1,#c2,#c3{
+        width: 300px;
+        height: 300px;
+    }
+    #c5{
+        padding-top: 110px;
+    }
+    .row1{
+        padding-left: 100px;
+    }
+}
+/* End Media Query full screen*/
+
+/*Media Query Ipad screen*/
+@media screen and (max-width: 1000px) {
+    #c1, #c2, #c3 {
+        width: 230px;
+        height: 230px;
+    }
+    #c6, #c7, #c8 {
+        width: 190px;
+        height: 190px;
+    }
+    #c1 h6 {
+        top: 205px;
+        left: 50px;
+    }
+    #c1_1 {
+        width: 110px;
+        height: 105px;
+        margin-top: 10px;
+        background-image: url("assets/Blender_Logo.png");
+        background-size: cover;
+    }
+    #c1_1_1 {
+        width: 110px;
+        height: 105px;
+        margin-top: 120px;
+        background-image: url("assets/Vue.png");
+        background-size: cover;
+    }
+    #c1_2 {
+        width: 230px;
+        height: 230px;
+    }
+    #c1_2 h6 {
+        top: 205px;
+        left: 40px;
+    }
+    #c1_3 {
+        width: 230px;
+        height: 230px;
+    }
+    #c1_3 h6 {
+        top: 205px;
+        left: 27px;
+    }
+    #c1_4 {
+        width: 110px;
+        height: 105px;
+        margin-top: 10px;
+        background-image: url("assets/Jira_Logo.png");
+        background-size: cover;
+    }
+    #c1_4_1 {
+        width: 110px;
+        height: 105px;
+        margin-top: 120px;
+        background-image: url("assets/Figma.png");
+        background-size: cover;
+    }
+    #c3 h6 {
+        top: 207px;
+        left: 70px;
+    }
+    #c4 {
+        width: 230px;
+        height: 230px;
+        margin-left: 60px;
+    }
+    #c5 {
+        width: 400px;
+        padding-top: 50px;
+    }
+    #c10 {
+        width: 750px;
+        margin-left: 200px;
+        margin-right: 50px;
+    }
+    .container_4 {
+        margin: 50px 20px 20px;
+    }
+    .col-sm-8 {
+        padding: 42px 42px 0 0;
+    }
+    .row1 {
+        padding-left: 100px;
+    }
+    /*End Media Query Ipad screen*/
+
+    /*Media Query Iphone screen*/
+    @media screen and (max-width: 700px) {
+        #c1, #c2, #c3 {
+            width: 110px;
+            height: 110px;
+        }
+        #c6, #c7, #c8 {
+            width: 110px;
+            height: 110px;
+        }
+        #c1 h6 {
+            top: 99px;
+            left: 18px;
+        }
+        #c1_1 {
+            width: 110px;
+            height: 45px;
+            margin-top: 10px;
+            background-image: url("assets/Blender_140px.png");
+            background-size: cover;
+        }
+        #c1_1_1 {
+            width: 110px;
+            height: 45px;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            background-image: url("assets/Vue_140px.png");
+            background-size: cover;
+        }
+        #c1_2, #c1_3 {
+            width: 110px;
+            height: 110px;
+        }
+        #c1_2 h6 {
+            top: 99px;
+            left: 12px;
+        }
+        #c1_3 h6 {
+            top: 98px;
+            left: 7px;
+        }
+        #c1_4 {
+            width: 110px;
+            height: 45px;
+            margin-top: 10px;
+            background-image: url("assets/Jira_140px.png");
+            background-size: cover;
+        }
+        #c1_4_1 {
+            width: 110px;
+            height: 45px;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            background-image: url("assets/Figma_140px.png");
+            background-size: cover;
+        }
+        #c3 h6 {
+            top: 99px;
+            left: 23px;
+        }
+        #c4 {
+            width: 110px;
+            height: 110px;
+            margin: 10px;
+            border: 1px solid #332f2f;
+        }
+        #c5 {
+            height: 150px;
+            padding-top: 5px;
+        }
+        #c10 {
+            width: 400px;
+            margin: 50px 20px 20px;
+        }
+        .col-sm-8 {
+            text-align: center;
+            padding: 5px;
+        }
+        h4{
+            padding-top: 50px;
+            text-decoration: underline;
+        }
+        h6{
+            font-size: 7px;
+        }
+        .container_4{
+            height: 200px;
+        }
+    }
+}
+/*End Media Query Iphone screen*/
+
