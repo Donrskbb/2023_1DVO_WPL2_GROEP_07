@@ -36,8 +36,21 @@ html {
   
   .title {
     color: grey;
+    text-align: center;
   }
-  
+  .title_Miguel{
+    display: flex;
+    justify-content: center;
+  }
+
+  .button a{
+    color: #fff;
+    text-decoration: none;
+  }
+  .text{
+    text-align: center;
+  }
+
   .button {
     border: none;
     outline: 0;
