@@ -1,31 +1,40 @@
 <template>
   <footer class="footer">
-    <div class="container">
-      <div class="footer-brand">
-        <h1>CRUIZE</h1>
+    <div class="footer-grid">
+      <div class="brand-section">
+        <slot name="brand">
+          <img src="../assets/images/LogoSizes/LogoCrooze250.png" alt="image" style="width: 200px; height: 30px;">
+          <p>Straatnaam 69, 420 Poopcity</p>
+          <p>Contact@crozemedia.com</p>
+          <p>+32 420 69 69 69</p>
+          <p>BTW 0000000000</p>
+          <p>©CROOZEMEDIA BV</p>
+        </slot>
       </div>
-      <div class="footer-address">
-        <p>Adres komt hier 15, 3500 Hasselt</p>
-        <p>Email: mail@example.com</p>
-        <p>Tel: +32 12 345 678</p>
-        <p>BTW: 123456789ABC</p>
+      <div class="info-section">
+        <h3 class="info">INFO</h3>
+        <ul>
+          <li><a href="#">Over Crooze</a></li>
+          <li><a href="#">Privacybeleid</a></li>
+          <li><a href="#">Adverteren</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
       </div>
-      <div class="footer-links">
-        <h2>PAGINAS</h2>
-        <a href="#">Home</a>
-        <a href="#">Community</a>
-        <a href="#">Events</a>
+      <div class="newsletter-section">
+        <h3>Schrijf je in voor onze nieuwsbrief</h3>
+        <form @submit.prevent="subscribe">
+          <input type="email" placeholder="Voorbeeld@emailadres.com" v-model="email" required>
+          <button type="submit">Inschrijven</button>
+        </form>
       </div>
-      <div class="footer-social">
-        <a href="#" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="#" aria-label="Facebook">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" aria-label="Twitch">
-          <i class="fab fa-twitch"></i>
-        </a>
+      <div class="social-section">
+        <h3 class="ons">Volg Ons</h3>
+        <div class="social-icons">
+          <a href="#"><img src="../assets/images/LogoSizes/Twitter_white.png" alt="Logo Twitter" style="width:35px;height:35px;"></a>
+          <a href="#"><img src="../assets/images/LogoSizes/Facebook_white.png" alt="Logo Facebookl" style="width:35px;height:35px;"></a>
+          <a href="#"><img src="../assets/images/LogoSizes/Instagram_white.png" alt="Logo Instagram" style="width:35px;height:35px;"></a>
+          <a href="#"><img src="../assets/images/LogoSizes/Linkedin_white.png" alt="Logo Linkedin" style="width:35px;height:35px;"></a>
+        </div>
       </div>
     </div>
   </footer>
@@ -34,89 +43,137 @@
 <script>
 export default {
   name: 'FooterComponent',
-  // any reactive data or methods would go here
-};
+  data() {
+    return {
+      email: ''
+    };
+  },
+  methods: {
+    subscribe() {
+      alert(`Bedankt voor je inschrijving!`);
+    }
+  }
+}
 </script>
 
 <style scoped>
 .footer {
-  background-color: #282828;
-  color: #ffffff;
-  padding: 10px 0; /* Reduced padding for a tighter look */
-  font-family: 'Arial', sans-serif;
+  background-color: #202427;
+  color: white;
+  font-family: Arial, sans-serif;
 }
 
-.container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center; /* Align items vertically */
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px; /* Padding for smaller screens */
+a{
+  color: #BDBDBD;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
 }
 
-.footer-brand h1 {
-  color: #f66b0e;
-  font-size: 1.8rem; /* Adjusted for a tighter look */
+li{
+  padding-bottom: 10px;
 }
 
-.footer-address,
-.footer-links {
+.footer-grid {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.footer-address p,
-.footer-links a {
-  font-size: 0.8rem; /* Smaller font-size */
-  line-height: 1.5; /* Adjust line spacing */
-  margin: 2px 0; /* Less space between lines */
+.info-section{
+  margin-bottom: 35px;
+}
+.social-icons{
+  text-align: left;
 }
 
-.footer-links h2 {
-  color: #f66b0e;
-  font-size: 1rem;
-  margin-bottom: 5px; /* Less space above links */
+.brand-section p, .info-section a, .footer-section li {
+  margin-top: 7px;
+  margin-bottom: 0;
 }
 
-.footer-links a {
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.3s ease;
+
+h2, h3 {
+  margin: 0;
+  color: #FF6B35;
+}
+.ons{
+  margin-bottom: 0;
+  margin-top:25px;
 }
 
-.footer-links a:hover {
-  color: #f66b0e;
+.info{
+  margin-top: 40px;
+  margin-bottom: 10px;
 }
 
-.footer-social a {
-  color: #ffffff;
-  margin: 0 5px; /* Less space between icons */
-  font-size: 1.2rem; /* Adjust icon size */
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
-.footer-social a:hover {
-  color: #f66b0e;
+.newsletter-section form {
+  display: flex;
 }
 
-/* Responsive adjustments */
+input {
+  flex-grow: 1;
+  padding: 10px;
+  background-color: #FFF;
+  color: #202427;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin-right: -5px;
+}
+::placeholder{
+  color: #202427;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #FF6B35;
+  color: white;
+  font-weight: 1000;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #E6531F;
+}
+
+.social-section h3 {
+  margin-bottom: 19.92px;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 10px;
+}
+
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    text-align: center;
+  .footer-grid {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
   }
 
-  .footer-brand, 
-  .footer-address, 
-  .footer-links, 
-  .footer-social {
-    margin-bottom: 10px;
+  .footer-section {
+    align-items: center;
   }
 
-  .footer-social {
-    display: flex;
-    justify-content: center;
+  .info-section {
+    align-items: flex-start;
   }
 }
 </style>
