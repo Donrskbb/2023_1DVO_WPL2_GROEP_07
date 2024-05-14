@@ -25,7 +25,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import { EventService } from '@/service/EventService.vue';
+import { EventService } from '@/service/EventService.js';
 
 onMounted(() => {
     EventService.getProductsSmall().then((data) => (products.value = data.slice(0, 9)));
