@@ -9,14 +9,12 @@ import FloatLabel from 'primevue/floatlabel';
 import Button from 'primevue/button';
 import Toast from 'primevue/toast';
 import Badge from 'primevue/badge';
-
 // Component State
 const toast = useToast();
 const op = ref(null);
 const loading = ref(false);
 const buttonDisabled = ref(false);
 const isCheckboxChecked = ref(false);
-
 // Menu Items
 const items = ref([
     {
@@ -64,14 +62,12 @@ const items = ref([
         to: '#podcast'
     },
 ]);
-
 // Functions
 const loadAndShowSuccess = async () => {
   if (buttonDisabled.value) {
     console.log("Button is disabled");
     return;
   }
-
   try {
     loading.value = true;
     const loadedSuccessfully = await new Promise((resolve) => {
@@ -80,7 +76,6 @@ const loadAndShowSuccess = async () => {
         resolve(true);
       }, 2000);
     });
-
     if (loadedSuccessfully) {
       showSuccess();
       toggle();
@@ -116,7 +111,6 @@ const openNewWindow = (url = '', options = {}) => {
     left = (window.screen.width - width) / 2,
     top = (window.screen.height - height) / 2,
   } = options;
-
   const windowFeatures = `width=${width},height=${height},left=${left},top=${top}`;
   window.open(url, '_blank', windowFeatures);
 };
@@ -322,7 +316,6 @@ const openNewWindow = (url = '', options = {}) => {
     background-color: currentColor;
     transition: width 0.3s ease;
 }
-
 .headerLabel:hover::before {
     width: 100%;
 }
