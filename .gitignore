@@ -27,5 +27,7 @@ coverage
 *.sln
 *.sw?
 *.zip
+*.eps
+*.pdf
 
 *.tsbuildinfo
