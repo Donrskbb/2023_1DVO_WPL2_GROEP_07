@@ -1,22 +1,19 @@
 <script>
 import Header from '@/components/Header.vue';
-import Main from '@/components/Main.vue';
 import Footer from '@/components/Footer.vue';
 import 'primevue/resources/themes/lara-dark-amber/theme.css';
 export default {
-  components: {
-      Header,
-      Main,
-      Footer,
-  }
+components: {
+    Header,
+    Footer,
+}
 };
 </script>
 
 <template>
   <Header />
-  <Main />
-  <Footer />  
-  <RouterView />
+
+  <Footer />
 </template>
 
 <style scoped>

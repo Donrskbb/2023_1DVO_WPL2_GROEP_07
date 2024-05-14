@@ -1,5 +1,5 @@
 <template>
-    <!-- <div class="card">
+    <div class="card">
       <Carousel :value="events" :numVisible="3" :numScroll="1" :responsiveOptions="responsiveOptions" circular :autoplayInterval="3000">
         <template #item="slotProps">
           <div class="border-1 surface-border border-round m-2  p-3">
@@ -20,59 +20,59 @@
           </div>
         </template>
       </Carousel>
-    </div> -->
+    </div>
   </template>
   
 <script setup>
-//     import { ref, onMounted } from "vue";
-//     import EventService from '@/service/EventService';
-//     import Carousel from 'primevue/carousel';
-//     import Button from 'primevue/button';
-//     import Tag from 'primevue/tag';
+    import { ref, onMounted } from "vue";
+    import EventService from '@/service/EventService';
+    import Carousel from 'primevue/carousel';
+    import Button from 'primevue/button';
+    import Tag from 'primevue/tag';
   
-//   onMounted(() => {
-//       EventService.getEventsSmall().then((data) => (events.value = data.slice(0, 9)));
-//   })
+  onMounted(() => {
+      EventService.getEventsSmall().then((data) => (events.value = data.slice(0, 9)));
+  })
   
-//   const events = ref();
-//   const responsiveOptions = ref([
-//       {
-//           breakpoint: '1400px',
-//           numVisible: 2,
-//           numScroll: 1
-//       },
-//       {
-//           breakpoint: '1199px',
-//           numVisible: 3,
-//           numScroll: 1
-//       },
-//       {
-//           breakpoint: '767px',
-//           numVisible: 2,
-//           numScroll: 1
-//       },
-//       {
-//           breakpoint: '575px',
-//           numVisible: 1,
-//           numScroll: 1
-//       }
-//   ]);
+  const events = ref();
+  const responsiveOptions = ref([
+      {
+          breakpoint: '1400px',
+          numVisible: 2,
+          numScroll: 1
+      },
+      {
+          breakpoint: '1199px',
+          numVisible: 3,
+          numScroll: 1
+      },
+      {
+          breakpoint: '767px',
+          numVisible: 2,
+          numScroll: 1
+      },
+      {
+          breakpoint: '575px',
+          numVisible: 1,
+          numScroll: 1
+      }
+  ]);
   
-//   const getSeverity = (status) => {
-//       switch (status) {
-//           case 'INSTOCK':
-//               return 'success';
+  const getSeverity = (status) => {
+      switch (status) {
+          case 'INSTOCK':
+              return 'success';
   
-//           case 'LOWSTOCK':
-//               return 'warning';
+          case 'LOWSTOCK':
+              return 'warning';
   
-//           case 'OUTOFSTOCK':
-//               return 'danger';
+          case 'OUTOFSTOCK':
+              return 'danger';
   
-//           default:
-//               return null;
-//       }
-//   };
+          default:
+              return null;
+      }
+  };
   
   </script>
   

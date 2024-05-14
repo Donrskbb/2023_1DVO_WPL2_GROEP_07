@@ -35,7 +35,7 @@ export default {
   right: 0;
   height: 500px;
 
-  background-image: url(/src/assets/images/header.jpeg);
+  background-image: url(/src/assets/images/headerimage.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
