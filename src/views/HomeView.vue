@@ -17,7 +17,7 @@ export default {
 
 <template>
   <div class="main-container">
-    <div class="header headerImage"></div>
+    <div class="headerImage"></div>
     <Promotion class="promotion-overlay" />
     <Agenda />
     <Podcasts />
@@ -29,7 +29,6 @@ export default {
   position: relative;
 }
 .headerImage {
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -39,15 +38,8 @@ export default {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* Masking (if supported)
-  -webkit-mask-image: url(/src/assets/images/mask1.png);
-  mask-image: url(/src/assets/images/mask1.png);
-  -webkit-mask-size: 100%;
-  mask-size: 100%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat; */
 }
+
 .content-wrapper {
   display: flex;
   justify-content: space-between;

@@ -19,7 +19,7 @@ export default {
     <div class="footer-grid">
       <div class="brand-section">
         <slot name="brand">
-          <img src="../assets/images/LogoSizes/LogoCrooze250.png" alt="image" style="width: 200px; height: 30px;">
+          <img src="../assets/images/LogoCrooze250.png" alt="image" style="width: 200px; height: 30px;">
           <p>Straatnaam 69, 420 Poopcity</p>
           <p>Contact@crozemedia.com</p>
           <p>+32 420 69 69 69</p>

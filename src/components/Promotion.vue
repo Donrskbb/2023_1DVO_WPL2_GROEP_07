@@ -17,7 +17,7 @@
       </div>
       
       <div class="phone-container">
-        <img src="..\assets\images\gsm.png" alt="Phone" class="phone-image" />
+        <img src="..\assets\images\APP_mockup_1.png" alt="Phone" class="phone-image" />
       </div>
     </div>
   </div>
@@ -59,12 +59,12 @@
 .phone-container {
   position: absolute;
   z-index: 999;
-  top: -60%;
+  top: -110%;
   right: 23%;
 }
 .phone-image {
   position: relative;
-  max-width: 500px;
+  max-width: 400px;
 }
 @media (max-width: 1425px) {
   .phone-container {
