@@ -35,18 +35,18 @@ export default {
   right: 0;
   height: 500px;
 
-  background-image: url(/src/assets/images/headerimage.jpg);
+  background-image: url(/assets/images/headerimage.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  /* Masking (if supported) */
+  /* Masking (if supported)
   -webkit-mask-image: url(/src/assets/images/mask1.png);
   mask-image: url(/src/assets/images/mask1.png);
   -webkit-mask-size: 100%;
   mask-size: 100%;
   -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
+  mask-repeat: no-repeat; */
 }
 .content-wrapper {
   display: flex;
