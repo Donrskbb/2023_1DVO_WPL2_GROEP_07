@@ -1,6 +1,6 @@
 <script setup>
 // PrimeVue Imports
-import { ref } from 'vue';
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 import { useToast } from 'primevue/usetoast';
 import Menubar from 'primevue/menubar';
 import OverlayPanel from 'primevue/overlaypanel';
@@ -9,59 +9,89 @@ import FloatLabel from 'primevue/floatlabel';
 import Button from 'primevue/button';
 import Toast from 'primevue/toast';
 import Badge from 'primevue/badge';
+
 // Component State
 const toast = useToast();
 const op = ref(null);
 const loading = ref(false);
 const buttonDisabled = ref(false);
 const isCheckboxChecked = ref(false);
+const screenWidth = ref(window.innerWidth);
+
+// Update screen width on resize
+const updateScreenWidth = () => {
+  screenWidth.value = window.innerWidth;
+};
+
+// Add event listener for window resize
+onMounted(() => {
+  window.addEventListener('resize', updateScreenWidth);
+});
+
+// Remove event listener on component unmount
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', updateScreenWidth);
+});
+
 // Menu Items
-const items = ref([
+const items = computed(() => {
+  const commonItems = [
     {
-        label: 'Live Chat',
-        command: () => openNewWindow('/chat', { width: 300, height: 500, features: 'resizable=no,scrollbars=yes' })
+      label: 'Live Chat',
+      command: () => openNewWindow('/chat', { width: 300, height: 500, features: 'resizable=no,scrollbars=yes' })
     },
     {
-        label: 'Agenda',
-        to: '/about'
+      label: 'Agenda',
+      to: '/about'
     },
     {
-        label: 'Settings',
-        items: [
+      label: 'Settings',
+      items: [
+        {
+          label: 'Language',
+          icon: 'pi pi-globe',
+          items: [
             {
-                label: 'Language',
-                icon: 'pi pi-globe',
-                items: [
-                {
-                    label: 'Nederlands',
-                    command: () => {
-                    }
-                },
-                {
-                    label: 'English',
-                    command: () => {
-                    }
-                },
-                {
-                    label: 'France',
-                    command: () => {
-                    }
-                }
-                ]
+              label: 'Nederlands',
+              command: () => {
+              }
             },
-        ]
+            {
+              label: 'English',
+              command: () => {
+              }
+            },
+            {
+              label: 'France',
+              command: () => {
+              }
+            }
+          ]
+        },
+      ]
     },
     {
-        label: 'Zenders',
-        badge: 'LIVE',
-        to: '',
-        command: () => openNewWindow('/radio', { width: 300, height: 500, features: 'resizable=no,scrollbars=yes' })
+      label: 'Zenders',
+      badge: 'LIVE',
+      to: '',
+      command: () => openNewWindow('/radio', { width: 300, height: 500, features: 'resizable=no,scrollbars=yes' })
     },
     {
-        label: 'Podcast',
-        to: '#podcast'
-    },
-]);
+      label: 'Podcast',
+      to: '#podcast'
+    }
+  ];
+
+  if (screenWidth.value < 768) {
+    commonItems.push({
+      label: 'Stuur een bericht',
+      command: (event) => toggle(event)
+    });
+  }
+
+  return commonItems;
+});
+
 // Functions
 const loadAndShowSuccess = async () => {
   if (buttonDisabled.value) {
@@ -87,6 +117,7 @@ const loadAndShowSuccess = async () => {
     console.error("An error occurred while loading:", error);
   }
 };
+
 const showSuccess = () => {
   toast.add({
     severity: 'success',
@@ -95,15 +126,18 @@ const showSuccess = () => {
     life: 3000,
   });
 };
+
 const disableButtonForDuration = (duration) => {
   buttonDisabled.value = true;
   setTimeout(() => {
     buttonDisabled.value = false;
   }, duration);
 };
+
 const toggle = (event) => {
   op.value.toggle(event);
 };
+
 const openNewWindow = (url = '', options = {}) => {
   const {
     width = 800,
@@ -118,12 +152,11 @@ const openNewWindow = (url = '', options = {}) => {
 
 <template>
     <div class="main-container">
-
         <Menubar :model="items" class="menubar mw">
             <template #start>
-                    <a href="/" rel="noopener noreferrer">
-                        <img src="../assets/images/LogoCrooze250.png" alt="Crooze Logo" class="logo"
-                    </a>
+                <a href="/" rel="noopener noreferrer">
+                    <img src="../assets/images/LogoCrooze250.png" alt="Crooze Logo" class="logo">
+                </a>
             </template>
             <template #item="{ item, props, hasSubmenu, root }">
                 <RouterLink v-if="item.to" :to="item.to" v-ripple class="flex align-items-center" v-bind="props.action">
@@ -140,7 +173,7 @@ const openNewWindow = (url = '', options = {}) => {
                 </a>
             </template>
             <template #end>
-                <Toast /> 
+                <Toast />
                 <div class="card flex justify-content-center">
                     <Button type="button" label="Stuur een bericht" @click="toggle" class="btn headerLabel"/>
                     <OverlayPanel ref="op" class="overlay">
@@ -155,47 +188,35 @@ const openNewWindow = (url = '', options = {}) => {
                                 <div class="FloatLabel">
                                     <FloatLabel>
                                         <InputText class="InputText" id="email" v-model="email" />
-                                        <label  class="InputTextLabel" for="email">E-mailadress*</label>
+                                        <label class="InputTextLabel" for="email">E-mailadress*</label>
                                     </FloatLabel>
                                 </div>
                                 <div class="FloatLabel">
                                     <FloatLabel>
                                         <InputText class="InputText" id="phone" v-model="phone" />
-                                        <label  class="InputTextLabel" for="message">Telefoonnummer*</label>
+                                        <label class="InputTextLabel" for="message">Telefoonnummer*</label>
                                     </FloatLabel>
                                 </div>
                                 <div class="FloatLabel">
                                     <FloatLabel>
                                         <InputText class="InputTextLarge" id="message" v-model="message" />
-                                        <label  class="InputTextLabel" for="message">Vul hier je bericht in</label>
+                                        <label class="InputTextLabel" for="message">Vul hier je bericht in</label>
                                     </FloatLabel>
                                 </div>
                                 <div class="flex">
-                                <Button 
-                                    class="btn overlay-btn"
-                                    type="submit" 
-                                    label="audio" 
-                                    icon="pi pi-plus" 
-                                    severity="info"
-                                />
-                                <Button 
-                                    class="btn overlay-btn"
-                                    type="submit" 
-                                    label="afbeelding" 
-                                    icon="pi pi-plus" 
-                                    severity="info"
-                                />
+                                    <Button class="btn overlay-btn" type="button" label="audio" icon="pi pi-plus" severity="info" />
+                                    <Button class="btn overlay-btn" type="button" label="afbeelding" icon="pi pi-plus" severity="info" />
                                 </div>
                                 <div class="voorwaarden">
                                     <input type="checkbox" id="voorwaarden" name="voorwaarden" value="voorwaarden" v-model="isCheckboxChecked">
-                                    <label for="voorwaarden" class="voorwaardenText" >Ik accepteer de <a href="/privacy" class="voorwaardenA" >voorwaarden</a></label>
+                                    <label for="voorwaarden" class="voorwaardenText">Ik accepteer de <a href="/privacy" class="voorwaardenA">voorwaarden</a></label>
                                 </div>
                                 <div>
-                                    <Button 
+                                    <Button
                                         class="submit"
-                                        type="submit" 
-                                        label="Versturen" 
-                                        icon="pi pi-check" 
+                                        type="submit"
+                                        label="Versturen"
+                                        icon="pi pi-check"
                                         severity="info"
                                         :loading="loading"
                                         :disabled="!isCheckboxChecked || buttonDisabled"
@@ -207,6 +228,9 @@ const openNewWindow = (url = '', options = {}) => {
                 </div>
             </template>
         </Menubar>
+        <div>
+            <p class="menu-message">Change the screen size smaller or bigger to let the menu bar work.</p>
+        </div>
         <div class="radio-container">
             <div class="radio-logo">
                 <img src="../assets/images/album_cover.jpg" alt="logo">
@@ -228,15 +252,15 @@ const openNewWindow = (url = '', options = {}) => {
 </template>
 
 <style>
-.radio-container{
+.radio-container {
     display: flex;
     height: 274px;
     overflow: hidden;
-    padding: 0px 138px;
+    padding: 0 138px;
     background: #FF6B34;
     align-items: center;
 }
-.radio-logo img{
+.radio-logo img {
     width: 200px;
     margin-left: 138px;
 }
@@ -245,7 +269,7 @@ const openNewWindow = (url = '', options = {}) => {
     flex-direction: column;
     padding: 40px;
 }
-.crooze-h3{
+.crooze-h3 {
     color: #202427;
     font-family: s_medium;
     font-size: 40px;
@@ -260,7 +284,7 @@ const openNewWindow = (url = '', options = {}) => {
     font-weight: 500;
     margin: 8px 0;
 }
-.crooze-btn{
+.crooze-btn {
     display: flex;
     width: 250px;
     align-items: center;
@@ -269,16 +293,16 @@ const openNewWindow = (url = '', options = {}) => {
     border: 0;
     margin: 8px 0;
     cursor: pointer;
-}   
-.btn-logo{
+}
+.btn-logo {
     padding: 6px;
 }
-.btn-logo img{
+.btn-logo img {
     width: 40px;
     height: 40px;
 }
 .btn-text p {
-    color:#FFF;
+    color: #FFF;
     font-family: s_medium;
     font-size: 20px;
     font-weight: 500;
@@ -332,16 +356,20 @@ const openNewWindow = (url = '', options = {}) => {
     border: 0;
 }
 .overlay {
-    width: 528px;
-    height: 683px;
+    width: 100%;
+    max-width: 528px;
+    height: auto;
+    max-height: 683px;
     overflow: hidden;
     border-radius: 8px;
     box-shadow: -8px 8px 0px 0px rgba(0, 0, 0, 0.10);
     background: #2A2F34;
 }
 .overlayForm {
-    width: 559px;
-    height: 776px;
+    width: 100%;
+    max-width: 559px;
+    height: auto;
+    max-height: 776px;
     flex-shrink: 0;
 }
 .InputTextLabel {
@@ -352,14 +380,16 @@ const openNewWindow = (url = '', options = {}) => {
     font-weight: 400;
 }
 .InputText {
-    width: 473px;
+    width: 100%;
+    max-width: 473px;
     height: 35px;
     border-radius: 8px;
     border: 1px solid #D9D9D9;
     background: #FFF;
 }
 .InputTextLarge {
-    width: 473px;
+    width: 100%;
+    max-width: 473px;
     height: 149.563px;
     background: #FFF;
     stroke-width: 1px;
@@ -367,10 +397,9 @@ const openNewWindow = (url = '', options = {}) => {
 }
 input[type="checkbox"] {
     width: 20px;
-    height: 20px;   
+    height: 20px;
     border-radius: 6px;
     outline: 1px solid #FF6B34;
-    
     accent-color: #FF6B34;
 }
 .FloatLabel {
@@ -395,7 +424,8 @@ input[type="checkbox"] {
 }
 .submit {
     display: flex;
-    width: 473px;
+    width: 100%;
+    max-width: 473px;
     padding: 8px 15px;
     border-radius: 6px;
     background: #FF6B34;
@@ -406,7 +436,72 @@ input[type="checkbox"] {
     background-color: #202427;
 }
 .mw {
-    max-width: 85%;
+    max-width: 100%;
     margin: 0 auto;
 }
+
+@media screen and (max-width: 768px) {
+    .menubar {
+        flex-direction: column;
+        padding: 10px;
+        gap: 20px;
+    }
+    .radio-container {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+    .radio-logo img {
+        margin-left: 0;
+    }
+    .radio-text {
+        align-items: center;
+        text-align: center;
+    }
+    .card {
+        display: none;
+    }
+}
+@media screen and (max-width: 990px) {
+    .radio-container {
+        padding: 0 120px;
+    }
+    .crooze-btn {
+        width: 190px;
+        height: 30px;
+    }
+    .btn-logo {
+        padding: 6px;
+    }
+    .btn-logo img {
+        width: 20px;
+        height: 20px;
+    }
+    .btn-text p {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 1160px) {
+
+}
+@media screen and (max-width: 1160px) {
+  .menubar {
+    display: none;
+  }
+  .menu-message {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: #FF6B34;
+    padding: 20px;
+  }
+}
+
+@media screen and (min-width: 1161px) {
+  .menu-message {
+    display: none;
+  }
+}
+
+
 </style>

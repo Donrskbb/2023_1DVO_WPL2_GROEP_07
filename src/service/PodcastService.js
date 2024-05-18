@@ -6,7 +6,7 @@ import image4 from '@/assets/images/4.jpg';
 const podcasts = [
     {
         id: 1,
-        name: 'Crooze is failliet',
+        name: 'podcast Title 1',
         // date: '20 APRIL 2024',
         location: 'Crooze Musings #1',
         ticketsAvailable: 0,
@@ -16,7 +16,7 @@ const podcasts = [
     },
     {
         id: 2,
-        name: 'Dus dit is',
+        name: 'podcast Title 2',
         //date: '28 APRIL 2024',
         location: 'Crooze Musings #2',
         ticketsAvailable: 0,
@@ -26,7 +26,7 @@ const podcasts = [
     },
     {
         id: 3,
-        name: 'Nutteloos',
+        name: 'podcast Title 3',
         //date: '12 MEI 2024',
         location: 'Crooze Musings #3',
         ticketsAvailable: 0,

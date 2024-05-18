@@ -19,7 +19,7 @@ export default {
     <div class="footer-grid">
       <div class="brand-section">
         <slot name="brand">
-          <img src="../assets/images/LogoCrooze250.png" alt="image" style="width: 200px; height: 30px;">
+          <img src="../assets/images/LogoCrooze250.png" alt="Logo Crooze" class="footer-logo">
           <p>Straatnaam 69, 420 Poopcity</p>
           <p>Contact@crozemedia.com</p>
           <p>+32 420 69 69 69</p>
@@ -46,10 +46,10 @@ export default {
       <div class="social-section">
         <h3 class="ons">Volg Ons</h3>
         <div class="social-icons">
-          <a href="#"><img src="../assets/images/LogoSizes/Twitter_white.png" alt="Logo Twitter" style="width:35px;height:35px;"></a>
-          <a href="#"><img src="../assets/images/LogoSizes/Facebook_white.png" alt="Logo Facebookl" style="width:35px;height:35px;"></a>
-          <a href="#"><img src="../assets/images/LogoSizes/Instagram_white.png" alt="Logo Instagram" style="width:35px;height:35px;"></a>
-          <a href="#"><img src="../assets/images/LogoSizes/Linkedin_white.png" alt="Logo Linkedin" style="width:35px;height:35px;"></a>
+          <a href="#"><img src="../assets/images/LogoSizes/Twitter_white.png" alt="Logo Twitter" class="social-icon"></a>
+          <a href="#"><img src="../assets/images/LogoSizes/Facebook_white.png" alt="Logo Facebook" class="social-icon"></a>
+          <a href="#"><img src="../assets/images/LogoSizes/Instagram_white.png" alt="Logo Instagram" class="social-icon"></a>
+          <a href="#"><img src="../assets/images/LogoSizes/Linkedin_white.png" alt="Logo Linkedin" class="social-icon"></a>
         </div>
       </div>
     </div>
@@ -61,54 +61,49 @@ export default {
   background-color: #202427;
   color: white;
   font-family: Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-a{
+.footer a {
   color: #BDBDBD;
   text-decoration: none;
 }
-a:hover{
+
+.footer a:hover {
   text-decoration: underline;
 }
 
-li{
+.footer li {
   padding-bottom: 10px;
 }
 
 .footer-grid {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 auto;
   max-width: 85%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin: 0 auto;
 }
 
-.info-section{
-  margin-bottom: 35px;
-}
-.social-icons{
-  text-align: left;
-}
-
-.brand-section p, .info-section a, .footer-section li {
+.brand-section p,
+.info-section a,
+.footer li {
   margin-top: 7px;
   margin-bottom: 0;
 }
 
-
-h2, h3 {
+h3 {
   margin: 0;
   color: #FF6B35;
 }
-.ons{
+
+.ons {
   margin-bottom: 0;
-  margin-top:25px;
+  margin-top: 25px;
 }
 
-.info{
+.info {
   margin-top: 40px;
   margin-bottom: 10px;
 }
@@ -121,9 +116,10 @@ ul {
 
 .newsletter-section form {
   display: flex;
+  flex-wrap: wrap;
 }
 
-input {
+.newsletter-section input {
   flex-grow: 1;
   padding: 10px;
   background-color: #FFF;
@@ -133,11 +129,12 @@ input {
   border-bottom-left-radius: 5px;
   margin-right: -5px;
 }
-::placeholder{
+
+.newsletter-section ::placeholder {
   color: #202427;
 }
 
-button {
+.newsletter-section button {
   padding: 10px 20px;
   border: none;
   background-color: #FF6B35;
@@ -149,12 +146,8 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
+.newsletter-section button:hover {
   background-color: #E6531F;
-}
-
-.social-section h3 {
-  margin-bottom: 19.92px;
 }
 
 .social-icons a {
@@ -162,19 +155,59 @@ button:hover {
   margin: 0 10px;
 }
 
+.footer-logo {
+  width: 200px;
+  height: auto;
+}
+
+.social-icon {
+  width: 35px;
+  height: 35px;
+}
+
 @media (max-width: 768px) {
   .footer-grid {
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
-  .footer-section {
-    align-items: center;
+  .footer-grid > div {
+    width: 100%;
+    margin-bottom: 20px;
   }
 
-  .info-section {
-    align-items: flex-start;
+  .newsletter-section form {
+    flex-direction: column;
+  }
+
+  .newsletter-section input {
+    margin-right: 0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  .newsletter-section button {
+    border-radius: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 10px;
+  }
+
+  .footer-grid {
+    max-width: 100%;
+  }
+
+  .footer-logo {
+    width: 150px;
+  }
+
+  .social-icon {
+    width: 30px;
+    height: 30px;
   }
 }
 </style>
