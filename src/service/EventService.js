@@ -7,34 +7,72 @@ const events = [
     {
         id: 1,
         name: 'Event Title 1',
-        date: '2024-04-20',
+        date: '20 APRIL 2024',
         location: 'HASSELT',
         ticketsAvailable: 0,
-        image: image1
+        image: image1,
+        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-event!',
+        link: 'https://example.com'
     },
     {
         id: 2,
         name: 'Event Title 2',
-        date: '2024-05-07',
+        date: '28 APRIL 2024',
         location: 'ANTWERPEN',
         ticketsAvailable: 0,
-        image: image2
+        image: image2,
+        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-event!',
+        link: 'https://example.com'
     },
     {
         id: 3,
         name: 'Event Title 3',
-        date: '2024-04-20',
+        date: '12 MEI 2024',
         location: 'HASSELT',
         ticketsAvailable: 0,
-        image: image3
+        image: image3,
+        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-event!',
+        link: 'https://example.com'
     },
     {
         id: 4,
         name: 'Event Title 4',
-        date: '2024-05-07',
+        date: '20 MEI 2024',
         location: 'ANTWERPEN',
         ticketsAvailable: 0,
-        image: image4
+        image: image4,
+        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-event!',
+        link: 'https://example.com'
+    },
+    {
+        id: 5,
+        name: 'Event Title 4',
+        date: '20 MEI 2024',
+        location: 'ANTWERPEN',
+        ticketsAvailable: 0,
+        image: image4,
+        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-event!',
+        link: 'https://example.com'
+    },
+    {
+        id: 6,
+        name: 'Event Title 4',
+        date: '20 MEI 2024',
+        location: 'ANTWERPEN',
+        ticketsAvailable: 0,
+        image: image4,
+        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-event!',
+        link: 'https://example.com'
+    },
+    {
+        id: 7,
+        name: 'Event Title 4',
+        date: '20 MEI 2024',
+        location: 'ANTWERPEN',
+        ticketsAvailable: 0,
+        image: image4,
+        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-event!',
+        link: 'https://example.com'
     },
 ];
 
