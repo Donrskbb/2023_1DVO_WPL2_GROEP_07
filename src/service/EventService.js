@@ -1,43 +1,90 @@
-const products = [
+import image1 from '@/assets/images/1.jpg';
+import image2 from '@/assets/images/2.jpg';
+import image3 from '@/assets/images/3.jpg';
+import image4 from '@/assets/images/4.jpg';
+
+const events = [
     {
         id: 1,
-        name: 'Product 1',
-        image: 'product1.jpg',
-        price: 10,
-        inventoryStatus: 'INSTOCK'
+        name: 'Event Title 1',
+        date: '20 APRIL 2024',
+        location: 'HASSELT',
+        ticketsAvailable: 0,
+        image: image1,
+        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-event!',
+        link: 'https://example.com'
     },
     {
         id: 2,
-        name: 'Product 2',
-        image: 'product2.jpg',
-        price: 20,
-        inventoryStatus: 'LOWSTOCK'
+        name: 'Event Title 2',
+        date: '28 APRIL 2024',
+        location: 'ANTWERPEN',
+        ticketsAvailable: 0,
+        image: image2,
+        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-event!',
+        link: 'https://example.com'
     },
     {
         id: 3,
-        name: 'Product 3',
-        image: 'product3.jpg',
-        price: 30,
-        inventoryStatus: 'OUTOFSTOCK'
+        name: 'Event Title 3',
+        date: '12 MEI 2024',
+        location: 'HASSELT',
+        ticketsAvailable: 0,
+        image: image3,
+        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-event!',
+        link: 'https://example.com'
     },
-    // Add more products as needed
+    {
+        id: 4,
+        name: 'Event Title 4',
+        date: '20 MEI 2024',
+        location: 'ANTWERPEN',
+        ticketsAvailable: 0,
+        image: image4,
+        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-event!',
+        link: 'https://example.com'
+    },
+    {
+        id: 5,
+        name: 'Event Title 4',
+        date: '20 MEI 2024',
+        location: 'ANTWERPEN',
+        ticketsAvailable: 0,
+        image: image4,
+        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-event!',
+        link: 'https://example.com'
+    },
+    {
+        id: 6,
+        name: 'Event Title 4',
+        date: '20 MEI 2024',
+        location: 'ANTWERPEN',
+        ticketsAvailable: 0,
+        image: image4,
+        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-event!',
+        link: 'https://example.com'
+    },
+    {
+        id: 7,
+        name: 'Event Title 4',
+        date: '20 MEI 2024',
+        location: 'ANTWERPEN',
+        ticketsAvailable: 0,
+        image: image4,
+        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-event!',
+        link: 'https://example.com'
+    },
 ];
 
-// Simulated delay for asynchronous operation
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-// ProductService object
-const ProductService = {
-    // Method to fetch small product data
-    getProductsSmall() {
-        // Simulate delay and then return a portion of products
-        return delay(1000).then(() => products.slice(0, 9));
+const EventService = {
+    getEventsSmall() {
+        return delay(1000).then(() => events.slice(0, 9));
     },
-    // Method to fetch large product data
-    getProductsLarge() {
-        // Simulate delay and then return all products
-        return delay(1500).then(() => products);
+    getEventsLarge() {
+        return delay(1500).then(() => events);
     }
 };
 
-export default ProductService;
+export default EventService;

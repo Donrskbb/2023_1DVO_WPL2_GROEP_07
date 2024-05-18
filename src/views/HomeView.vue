@@ -17,7 +17,7 @@ export default {
 
 <template>
   <div class="main-container">
-    <div class="header headerImage"></div>
+    <div class="headerImage"></div>
     <Promotion class="promotion-overlay" />
     <Agenda />
     <Podcasts />
@@ -29,19 +29,57 @@ export default {
   position: relative;
 }
 .headerImage {
-  width: 100%;
-  height: 800px; /* Adjusted height */
-  background-image: url(/src/assets/images/headerimage.jpg);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 500px;
+
+  background-image: url(/assets/images/headerimage.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
   z-index: 1;
 }
-.promotion-overlay {
-  position: absolute;
-  top:50%; /* Adjusted positioning */
-  left: 0;
-  right: 0;
-  z-index: 2; /* Higher z-index than header image */
+.content-container {
+  flex: 1;
+  padding: 20px;
+  margin-bottom: 500px;
+}
+.image-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  width: 20%;
+  margin: 50px;
+  z-index: 2;
+}
+.stacked-image {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+}
+.surface-section {
+  margin-top: 75px;
+}
+.reclame-banner {
+  display: flex;
+  justify-content: space-around;
+
+}
+.download-btn {
+  display: flex;
+  flex-direction: column;
+}
+.dab {
+  width: 200px;
+  margin: 10px;
 }
 </style>
