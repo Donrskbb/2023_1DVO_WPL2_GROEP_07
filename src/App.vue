@@ -3,10 +3,10 @@ import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 import 'primevue/resources/themes/lara-dark-amber/theme.css';
 export default {
-components: {
+  components: {
     Header,
     Footer,
-}
+  }
 };
 </script>
 
