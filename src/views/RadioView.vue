@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-    <img src="../../assets/images/radio.PNG" alt="RadioPreview">
+    <img src="../assets/images/radio.png" alt="RadioPreview">
 </template>
 
 <style scoped>
