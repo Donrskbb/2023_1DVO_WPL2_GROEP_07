@@ -24,20 +24,14 @@
 
 <style scoped>
 .main-container {
-  background-color: transparent;
-  position: relative;
-  padding: 20px;
-  box-sizing: border-box;
+  background-color: #ffffff00;
 }
 
 .promo-container {
   display: flex;
-  flex-direction: column;
-  padding: 34px;
+  padding: 34px 0 34px 228px;
   background: #f0f0f0;
   max-width: 75%;
-  margin: auto;
-  border-radius: 8px;
 }
 
 .promo-content {
@@ -73,13 +67,9 @@
 
 .phone-container {
   position: absolute;
-  top: 0;
-  right: 5%;
-  transform: translateY(-50%);
   z-index: 999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: -160%;
+  right: 5%;
 }
 
 .phone-image {
@@ -92,42 +82,16 @@
   .phone-container {
     display: none;
   }
-}
-
-@media (max-width: 1200px) {
   .promo-container {
-    padding: 20px;
+    border-radius: 0 8px 8px 0;
     max-width: 100%;
   }
-  
-  .promo-title {
-    font-size: 32px;
-  }
-
-  .promo-text {
-    font-size: 18px;
-  }
-
-  .promo-image {
-    width: 150px;
-  }
 }
-
-@media (max-width: 600px) {
-  .promo-container {
-    padding: 15px;
-  }
-
-  .promo-title {
-    font-size: 28px;
-  }
-
-  .promo-text {
-    font-size: 16px;
-  }
-
-  .promo-image {
-    width: 120px;
+@media screen and (max-width: 960px) {
+  .promo-container{
+    padding: 34px 0 34px 34px;
+    background: #f0f0f0;
+    max-width: 100%;
   }
 }
 </style>

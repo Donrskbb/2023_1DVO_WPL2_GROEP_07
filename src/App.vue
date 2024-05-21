@@ -2,18 +2,19 @@
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 import 'primevue/resources/themes/lara-dark-amber/theme.css';
+
 export default {
 components: {
     Header,
     Footer,
-}
+  },
 };
 </script>
 
 <template>
-  <Header />
-  <router-view />
-  <Footer />
+    <Header v-if="$route.meta.showHeaderFooter" />
+    <router-view />
+    <Footer v-if="$route.meta.showHeaderFooter" />
 </template>
 
 <style scoped>
@@ -46,7 +47,8 @@ components: {
     src: url('@/assets/fonts/Unbounded-VariableFont_wght.ttf');
   }
 
-* {
+  * {
   background-color: #202427;
-}
+  font-family: s_regular, sans-serif;
+  }
 </style>

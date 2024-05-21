@@ -1,5 +1,5 @@
 <template>
-    <div class="section">
+    <div class="section" id="podcast">
       <h3 class="podcasts-title">Podcasts</h3>
       <div class="card">
         <Carousel :value="podcasts" :numVisible="4" :numScroll="1" :responsiveOptions="responsiveOptions" circular :autoplayInterval="10000" class="card">
