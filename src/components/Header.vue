@@ -42,7 +42,7 @@ const items = computed(() => {
     },
     {
       label: 'Agenda',
-      to: '/about'
+      to: 'https://example.com'
     },
     {
       label: 'Settings',
@@ -82,7 +82,7 @@ const items = computed(() => {
     }
   ];
 
-  if (screenWidth.value < 768) {
+  if (screenWidth.value < 960) {
     commonItems.push({
       label: 'Stuur een bericht',
       command: (event) => toggle(event)
@@ -440,7 +440,7 @@ input[type="checkbox"] {
     margin: 0 auto;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 960px) {
     .menubar {
         flex-direction: column;
         padding: 10px;
@@ -462,7 +462,7 @@ input[type="checkbox"] {
         display: none;
     }
 }
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1070px) {
     .radio-container {
         padding: 0 120px;
     }
@@ -481,27 +481,29 @@ input[type="checkbox"] {
         font-size: 15px;
     }
 }
-@media screen and (max-width: 1160px) {
-
+@media screen and (min-width: 960px) and (max-width: 1070px) {
+    .menu-message {
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        color: #FF6B34;
+        padding: 20px;
+    }
+    .menubar {
+        display: none;
+    }
+    .crooze-h2 {
+        font-size: 20px;
+    }
 }
-@media screen and (max-width: 1160px) {
-  .menubar {
-    display: none;
-  }
-  .menu-message {
-    display: block;
-    text-align: center;
-    font-size: 18px;
-    color: #FF6B34;
-    padding: 20px;
-  }
+@media screen and (max-width: 960px), screen and (min-width: 1070px) {
+    .menu-message {
+        display: none;
+    }
 }
-
-@media screen and (min-width: 1161px) {
-  .menu-message {
-    display: none;
-  }
+@media screen and (min-width: 1070px) and (max-width: 1250px) {
+    .crooze-h2 {
+        font-size: 25px;
+    }
 }
-
-
 </style>
