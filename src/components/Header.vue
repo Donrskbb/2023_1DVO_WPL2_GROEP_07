@@ -74,7 +74,7 @@ const items = computed(() => {
       label: 'Zenders',
       badge: 'LIVE',
       to: '',
-      command: () => openNewWindow('/radio', { width: 300, height: 500, features: 'resizable=no,scrollbars=yes' })
+      command: () => openNewWindow('/radio', { width: 500, height: 1000, features: 'resizable=no,scrollbars=yes' })
     },
     {
       label: 'Podcast',
@@ -321,6 +321,7 @@ const openNewWindow = (url = '', options = {}) => {
     background-color: #FF6B34;
     border-color: #FF6B34;
     color: #FFF;
+    z-index: 999;
 }
 .headerLabel {
     position: relative;
