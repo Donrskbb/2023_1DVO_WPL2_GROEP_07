@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <div class="section" id="agenda">
     <h3 class="events-title">Agenda</h3>
     <div class="card">
       <Carousel :value="events" :numVisible="4" :numScroll="1" :responsiveOptions="responsiveOptions" circular :autoplayInterval="10000" class="card">
