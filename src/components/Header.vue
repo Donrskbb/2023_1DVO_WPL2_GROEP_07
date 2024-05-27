@@ -42,7 +42,7 @@ const items = computed(() => {
     },
     {
       label: 'Agenda',
-      to: 'https://example.com'
+      to: '#agenda'
     },
     {
       label: 'Settings',
@@ -387,6 +387,8 @@ const openNewWindow = (url = '', options = {}) => {
     border-radius: 8px;
     border: 1px solid #D9D9D9;
     background: #FFF;
+    color: #202427;
+
 }
 .InputTextLarge {
     width: 100%;
@@ -395,6 +397,7 @@ const openNewWindow = (url = '', options = {}) => {
     background: #FFF;
     stroke-width: 1px;
     stroke: #D9D9D9;
+    color: #202427;
 }
 input[type="checkbox"] {
     width: 20px;
