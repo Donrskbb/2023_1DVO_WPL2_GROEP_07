@@ -1,19 +1,3 @@
-<script>
-export default {
-  name: 'FooterComponent',
-  data() {
-    return {
-      email: ''
-    };
-  },
-  methods: {
-    subscribe() {
-      alert(`Bedankt voor je inschrijving!`);
-    }
-  }
-}
-</script>
-
 <template>
   <footer class="footer">
     <div class="footer-grid">
@@ -39,9 +23,15 @@ export default {
       <div class="newsletter-section">
         <h3>Schrijf je in voor onze nieuwsbrief</h3>
         <form @submit.prevent="subscribe">
-          <input type="email" placeholder="Voorbeeld@emailadres.com" v-model="email" required>
+          <input type="text" id="name" name="name" placeholder="Jouw naam" v-model="name" required>
+          <input type="email" id="email" name="email" placeholder="Voorbeeld@emailadres.com" v-model="email" required>
           <button type="submit">Inschrijven</button>
         </form>
+        <p>{{ message }}</p>
+        <div v-if="showEmailContent">
+          <h2>email</h2>
+          <a href="{{ emailContent }}">LINK</a>
+        </div>
       </div>
       <div class="social-section">
         <h3 class="ons">Volg Ons</h3>
@@ -53,8 +43,47 @@ export default {
         </div>
       </div>
     </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5028.577399861061!2d5.3508603252716345!3d50.93687373734722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1snl!2sbe!4v1716821355334!5m2!1snl!2sbe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </footer>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+
+const name = ref('');
+const email = ref('');
+const message = ref('');
+const emailContent = ref('');
+const showEmailContent = ref(false);
+
+const subscribe = async () => {
+  try {
+    const response = await fetch('https://two324-1dvo-wpl2-groep-07-backend.onrender.com/api/subscriptions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify([
+        {
+          "name": name.value,
+          "email": email.value,
+          "confirmed": false
+        }
+      ]),
+    });
+    const data = await response.json();
+    message.value = data.message;
+
+    if (data.emailContent) {
+      emailContent.value = data.emailContent;
+      showEmailContent.value = true;
+    }
+    alert('Bedankt voor je inschrijving!');
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
+</script>
 
 <style scoped>
 .footer {

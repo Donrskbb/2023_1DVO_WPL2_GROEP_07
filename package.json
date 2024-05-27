@@ -1,15 +1,15 @@
 {
-  "name": "vue-template",
-  "version": "0.0.0",
+  "name": "vue-crooze",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "serve": "vite preview",
+    "start": "npm run dev"
   },
   "dependencies": {
-    "pinia": "^2.1.7",
     "primevue": "^3.52.0",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5"
