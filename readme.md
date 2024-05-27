@@ -2,7 +2,6 @@
 
 **Languages we have used**
 
-![Clojure](https://img.shields.io/badge/-Clojure-000000?style=flat&logo=Clojure)
 ![HTML5](https://img.shields.io/badge/-HTML5-000000?style=flat&logo=HTML5)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-000000?style=flat&logo=javascript)
 ![CSS](https://img.shields.io/badge/-CSS-000000?style=flat&logo=CSS3)
