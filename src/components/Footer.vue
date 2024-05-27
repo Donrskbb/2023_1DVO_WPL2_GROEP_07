@@ -4,10 +4,10 @@
       <div class="brand-section">
         <slot name="brand">
           <img src="../assets/images/LogoCrooze250.png" alt="Logo Crooze" class="footer-logo">
-          <p>Straatnaam 69, 420 Poopcity</p>
+          <p>Straatnaam 01, 3500 Hasselt</p>
           <p>Contact@crozemedia.com</p>
-          <p>+32 420 69 69 69</p>
-          <p>BTW 0000000000</p>
+          <p>+32 412 345 678</p>
+          <p>BTW 123456789</p>
           <p>©CROOZEMEDIA BV</p>
         </slot>
       </div>
@@ -15,7 +15,7 @@
         <h3 class="info">INFO</h3>
         <ul>
           <li><a href="#">Over Crooze</a></li>
-          <li><a href="#">Privacybeleid</a></li>
+          <li><a href="/privacy-policy.html">Privacybeleid</a></li>
           <li><a href="#">Adverteren</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
@@ -27,10 +27,11 @@
           <input type="email" id="email" name="email" placeholder="Voorbeeld@emailadres.com" v-model="email" required>
           <button type="submit">Inschrijven</button>
         </form>
-        <p>{{ message }}</p>
-        <div v-if="showEmailContent">
-          <h2>email</h2>
-          <a href="{{ emailContent }}">LINK</a>
+        <div>
+          <h2>{{ message }}</h2>
+          <div v-if="showEmailContent">
+            <p>Click <a :href="emailContent" class="oranje" target="_blank">here</a> to confirm!</p>
+          </div>
         </div>
       </div>
       <div class="social-section">
@@ -43,7 +44,13 @@
         </div>
       </div>
     </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5028.577399861061!2d5.3508603252716345!3d50.93687373734722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1snl!2sbe!4v1716821355334!5m2!1snl!2sbe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5028.577399861061!2d5.3508603252716345!3d50.93687373734722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1snl!2sbe!4v1716821355334!5m2!1snl!2sbe" 
+      class="maps"
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
   </footer>
 </template>
 
@@ -77,8 +84,10 @@ const subscribe = async () => {
     if (data.emailContent) {
       emailContent.value = data.emailContent;
       showEmailContent.value = true;
+      alert('Bedankt voor je inschrijving!');
+    } else {
+      alert('Bedankt voor je inschrijving!');
     }
-    alert('Bedankt voor je inschrijving!');
   } catch (error) {
     console.error('Error:', error);
   }
@@ -86,6 +95,14 @@ const subscribe = async () => {
 </script>
 
 <style scoped>
+.maps {
+  display: flex;
+  margin: 0 auto;
+
+  width: 85%;
+  height: 250px;
+  border: 0;
+}
 .footer {
   background-color: #202427;
   color: white;
@@ -177,6 +194,19 @@ ul {
 
 .newsletter-section button:hover {
   background-color: #E6531F;
+}
+
+.oranje,
+.oranje:hover {
+  color: #E6531F;
+  font-weight: bold;
+
+}
+
+.notif-email {
+  background-color: white;
+  padding: 5px;
+  color: #202427;
 }
 
 .social-icons a {

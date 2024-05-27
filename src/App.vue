@@ -1,11 +1,13 @@
 <script>
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
+import CookieBanner from '@/components/CookieBanner.vue';
 import 'primevue/resources/themes/lara-dark-amber/theme.css';
 
 export default {
 components: {
     Header,
+    CookieBanner,
     Footer,
   },
 };
@@ -14,6 +16,7 @@ components: {
 <template>
     <Header v-if="$route.meta.showHeaderFooter" />
     <router-view />
+    <CookieBanner />
     <Footer v-if="$route.meta.showHeaderFooter" />
 </template>
 
