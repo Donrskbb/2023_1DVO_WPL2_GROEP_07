@@ -5,6 +5,7 @@ import Agenda from '@/components/Agenda.vue';
 import Podcasts from '@/components/Podcasts.vue';
 import 'primevue/resources/themes/lara-dark-amber/theme.css';
 
+
 export default {
   components: {
     Main,

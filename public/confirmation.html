@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Confirmed</title>
+</head>
+<body>
+    <h1>Subscription Confirmed</h1>
+    <p>Thank you for confirming your subscription!</p>
+    <button id="unsubscribe-button">Unsubscribe</button>
+
+    <script>
+        document.getElementById('unsubscribe-button').addEventListener('click', async () => {
+            const token = new URLSearchParams(window.location.search).get('token');
+            const response = await fetch('/api/subscriptions', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ token }),
+            });
+            const data = await response.json();
+            alert(data.message);
+        });
+    </script>
+</body>
+</html>
