@@ -20,7 +20,3 @@
 ![Node.js](https://img.shields.io/badge/-Node.js-000000?style=flat&logo=node.js&logoColor=339933)
 ![Vue](https://img.shields.io/badge/-Vue-000000?style=flat&logo=Vue.js)
 ![Vite](https://img.shields.io/badge/Vite-000000?style=flat&logo=vite&logoColor=white) 
-
-<img align="" height='130px' src="https://github-readme-stats.vercel.app/api?username=adamalston&hide_title=true&show_icons=true&include_all_commits=true&line_height=21&bg_color=0,EC6C6C,FFD479,FFFC79,73FA79&theme=graywhite" /><img align="" height='130px' src="https://github-readme-stats.vercel.app/api/top-langs/?username=adamalston&hide_title=true&layout=compact&bg_color=0,73FA79,73FDFF,7A81FF&theme=graywhite" />
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Donrskbb&repo=2023_1DVO_WPL2_GROEP_07)](https://github.com/anuraghazra/github-readme-stats)
