@@ -70,14 +70,17 @@ const subscribe = async () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify([
-        {
-          "name": name.value,
-          "email": email.value,
-          "confirmed": false
-        }
-      ]),
+      body: JSON.stringify({
+        name: name.value,
+        email: email.value,
+        confirmed: false
+      }),
     });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
     const data = await response.json();
     message.value = data.message;
 
@@ -90,6 +93,7 @@ const subscribe = async () => {
     }
   } catch (error) {
     console.error('Error:', error);
+    alert('Er is een fout opgetreden bij het inschrijven. Probeer het opnieuw.');
   }
 };
 </script>
