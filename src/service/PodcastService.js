@@ -6,72 +6,42 @@ import image4 from '@/assets/images/4.jpg';
 const podcasts = [
     {
         id: 1,
-        name: 'podcast Title 1',
+        name: 'Podcasts en Crooze?',
         // date: '20 APRIL 2024',
         location: 'Crooze Musings #1',
         ticketsAvailable: 0,
         image: image1,
-        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-podcast!',
+        paragraph: 'Kom genieten van de allereerste Crooze Podcast!',
         link: 'https://example.com'
     },
     {
         id: 2,
-        name: 'podcast Title 2',
+        name: 'Crooze is terug',
         //date: '28 APRIL 2024',
         location: 'Crooze Musings #2',
         ticketsAvailable: 0,
         image: image2,
-        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-podcast!',
+        paragraph: 'Welkom terug bij de tweede Podcast!',
         link: 'https://example.com'
     },
     {
         id: 3,
-        name: 'podcast Title 3',
+        name: 'Jazz is weer in',
         //date: '12 MEI 2024',
         location: 'Crooze Musings #3',
         ticketsAvailable: 0,
         image: image3,
-        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-podcast!',
+        paragraph: 'Kom luisteren naar onze visie over Jazz muziek!',
         link: 'https://example.com'
     },
     {
         id: 4,
-        name: 'podcast Title 4',
+        name: 'Retro Crooze',
         //date: '20 MEI 2024',
         location: 'Crooze Musings #4',
         ticketsAvailable: 0,
         image: image4,
-        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-podcast!',
-        link: 'https://example.com'
-    },
-    {
-        id: 5,
-        name: 'podcast Title 5',
-        //date: '20 MEI 2024',
-        location: 'Crooze Musings #5',
-        ticketsAvailable: 0,
-        image: image4,
-        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-podcast!',
-        link: 'https://example.com'
-    },
-    {
-        id: 6,
-        name: 'podcast Title 6',
-        //date: '20 MEI 2024',
-        location: 'Crooze Musings #6',
-        ticketsAvailable: 0,
-        image: image4,
-        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-podcast!',
-        link: 'https://example.com'
-    },
-    {
-        id: 7,
-        name: 'podcast Title 7',
-        //date: '20 MEI 2024',
-        location: 'Crooze Musings #7',
-        ticketsAvailable: 0,
-        image: image4,
-        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-podcast!',
+        paragraph: 'Crooze the smooth radio!',
         link: 'https://example.com'
     },
 ];

@@ -1,13 +1,13 @@
-import image1 from '@/assets/images/1.jpg';
-import image2 from '@/assets/images/2.jpg';
-import image3 from '@/assets/images/3.jpg';
-import image4 from '@/assets/images/4.jpg';
+import image1 from '@/assets/images/1.jfif';
+import image2 from '@/assets/images/2.jfif';
+import image3 from '@/assets/images/3.jfif';
+import image4 from '@/assets/images/4.jfif';
 
 const events = [
     {
         id: 1,
-        name: 'Event Title 1',
-        date: '20 APRIL 2024',
+        name: 'Turkish Retro Night Band',
+        date: 'vr 14 jun, 21:00',
         location: 'HASSELT',
         ticketsAvailable: 0,
         image: image1,
@@ -16,9 +16,9 @@ const events = [
     },
     {
         id: 2,
-        name: 'Event Title 2',
-        date: '28 APRIL 2024',
-        location: 'ANTWERPEN',
+        name: 'Jeugdcentrum Rondpunt 26',
+        date: 'wo 6 nov, 20:15',
+        location: 'HASSELT',
         ticketsAvailable: 0,
         image: image2,
         paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-event!',
@@ -26,8 +26,8 @@ const events = [
     },
     {
         id: 3,
-        name: 'Event Title 3',
-        date: '12 MEI 2024',
+        name: 'MARCEL COENEN & FRIENDS@RAGNAROK LIVE',
+        date: 'za 29 jun, 19:00',
         location: 'HASSELT',
         ticketsAvailable: 0,
         image: image3,
@@ -36,39 +36,9 @@ const events = [
     },
     {
         id: 4,
-        name: 'Event Title 4',
-        date: '20 MEI 2024',
-        location: 'ANTWERPEN',
-        ticketsAvailable: 0,
-        image: image4,
-        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-event!',
-        link: 'https://example.com'
-    },
-    {
-        id: 5,
-        name: 'Event Title 4',
-        date: '20 MEI 2024',
-        location: 'ANTWERPEN',
-        ticketsAvailable: 0,
-        image: image4,
-        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-event!',
-        link: 'https://example.com'
-    },
-    {
-        id: 6,
-        name: 'Event Title 4',
-        date: '20 MEI 2024',
-        location: 'ANTWERPEN',
-        ticketsAvailable: 0,
-        image: image4,
-        paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-event!',
-        link: 'https://example.com'
-    },
-    {
-        id: 7,
-        name: 'Event Title 4',
-        date: '20 MEI 2024',
-        location: 'ANTWERPEN',
+        name: 'Bachot Muna Concert JAZZ & DREAMS',
+        date: 'zondag om 17:00',
+        location: 'HASSELT',
         ticketsAvailable: 0,
         image: image4,
         paragraph: 'Kom genieten van de beste kikale jazz-muziek tijdens dit Crooze-event!',
